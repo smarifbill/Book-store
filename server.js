@@ -41,16 +41,19 @@ app.get("/create", function (request, response) {
 
 //route to show data in array - temp db
 app.get("/getData", function (request, response) {
-  //response.sendFile(path.join(__dirname, "data.html"));
-
-  //sort the array by number of orders. Biggest number if the most popular.
-  //let list = db.sort((a, b) => b.number - a.number);
-
   //count the number of books that appears most in temp DB
-  let result = db.reduce(
+  let count = db.reduce(
     (acc, o) => ((acc[o.title] = (acc[o.title] || 0) + 1), acc),
     {}
   );
+
+  //convert to array
+  let entries = Object.entries(count);
+  //use array sort method to sort from highest to lowest
+  let sorted = entries.sort((a, b) => b[1] - a[1]);
+
+  //convert a list of key-value pairs into an object
+  let result = Object.fromEntries(sorted);
 
   //display data in array to html table
   response.render("data", { db: db, result });
