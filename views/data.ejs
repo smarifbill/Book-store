@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- adjust to device screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--external CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+
+    <title>Express JS</title>
+  </head>
+  <body>
+    <!--
+         Embedded Javascript Script
+
+      -->
+
+    <div class="table-data">
+      <h2> Book Store Data </h2>
+      <br>
+      <h6> List of Users and Favourite Books </h6>
+      <table>
+        <tr>
+          <th>Username</th>
+          <th>Book Title</th>
+        </tr>
+  
+        <% for (var i = 0; i < db.length; i++) { %>
+        <tr>
+          <td><%= db[i].username %></td>
+          <td><%= db[i].title %></td>
+        </tr>
+        <% } %>
+      </table>
+      <br />
+      <h6> List of Popular Favourite Books </h6>
+      <table>
+        <tr>
+          <th>Book Title</th>
+          <th>Most Popular Book (Highest Total)</th>
+        </tr>
+  
+        <% for(item in result) { %>
+        <tr>
+          <td><%= item %></td>
+          <td><%= result[item] %></td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+  </body>
+</html>

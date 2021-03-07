@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: lightcyan;
+}
+
+/*For very small devices (phones) 600px and down */
+@media only screen and (max-width: 600px) {
+  /*fit text to small screen */
+  body {
+    overflow: auto;
+    text-overflow: ellipsis;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
+  display: flex; /* display flexbox*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+label {
+  margin: 10px;
+}
+
+input {
+  width: 6cm;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.table-data {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  left: 200px;
+  right: 200px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+h6 {
+  color: blue;
+}
