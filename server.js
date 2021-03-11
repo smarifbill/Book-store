@@ -53,11 +53,12 @@ app.get("/getData", function (request, response) {
   let sorted = entries.sort((a, b) => b[1] - a[1]);
 
   //convert a list of key-value pairs into an object
+  //using for - in loop in ejs file to loop over object
   let result = Object.fromEntries(sorted);
 
   //display data in array to html table
   response.render("data", { db: db, result });
 });
 
-app.listen(8080);
-console.log("Server is running at http://localhost:8080");
+app.listen(3000);
+console.log("Server is running at http://localhost:3000");
